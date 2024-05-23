@@ -53,7 +53,6 @@ namespace Phonebook
             // Username_TextBox
             // 
             Username_TextBox.BackColor = SystemColors.Window;
-            Username_TextBox.ClickContourColor = Color.FromArgb(192, 0, 0);
             Username_TextBox.Location = new Point(107, 160);
             Username_TextBox.Name = "Username_TextBox";
             Username_TextBox.PlaceholderText = "Username";
@@ -65,7 +64,6 @@ namespace Phonebook
             // Password_TextBox
             // 
             Password_TextBox.BackColor = SystemColors.Window;
-            Password_TextBox.ClickContourColor = Color.Empty;
             Password_TextBox.Location = new Point(107, 202);
             Password_TextBox.Name = "Password_TextBox";
             Password_TextBox.PlaceholderText = "Password";

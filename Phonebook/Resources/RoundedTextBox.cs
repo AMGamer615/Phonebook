@@ -13,8 +13,6 @@ namespace Phonebook.Resources
 {
     public partial class RoundedTextBox : TextBox
     {
-        public Color ClickContourColor { get; set; }
-
         private int round = 15;
         public int Round {
             get
@@ -42,6 +40,18 @@ namespace Phonebook.Resources
             container.Add(this);
 
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, round, round));
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, round, round));
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, round, round));
         }
     }
