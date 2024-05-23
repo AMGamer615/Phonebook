@@ -33,9 +33,9 @@ namespace Phonebook
             Login_PictureBox = new PictureBox();
             Username_TextBox = new RoundedTextBox(components);
             Password_TextBox = new RoundedTextBox(components);
-            Login_Button = new Button();
-            Cancell_Button = new Button();
             errorProvider = new ErrorProvider(components);
+            Login_Button = new RoundedButton(components);
+            Cancell_Button = new RoundedButton(components);
             ((System.ComponentModel.ISupportInitialize)Login_PictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -53,7 +53,7 @@ namespace Phonebook
             // Username_TextBox
             // 
             Username_TextBox.BackColor = SystemColors.Window;
-            Username_TextBox.Location = new Point(107, 160);
+            Username_TextBox.Location = new Point(107, 156);
             Username_TextBox.Name = "Username_TextBox";
             Username_TextBox.PlaceholderText = "Username";
             Username_TextBox.Round = 15;
@@ -64,7 +64,7 @@ namespace Phonebook
             // Password_TextBox
             // 
             Password_TextBox.BackColor = SystemColors.Window;
-            Password_TextBox.Location = new Point(107, 202);
+            Password_TextBox.Location = new Point(107, 198);
             Password_TextBox.Name = "Password_TextBox";
             Password_TextBox.PlaceholderText = "Password";
             Password_TextBox.Round = 15;
@@ -73,33 +73,38 @@ namespace Phonebook
             Password_TextBox.TextAlign = HorizontalAlignment.Center;
             Password_TextBox.UseSystemPasswordChar = true;
             // 
-            // Login_Button
-            // 
-            Login_Button.Location = new Point(160, 245);
-            Login_Button.Name = "Login_Button";
-            Login_Button.Size = new Size(76, 23);
-            Login_Button.TabIndex = 7;
-            Login_Button.Text = "Login";
-            Login_Button.UseVisualStyleBackColor = true;
-            Login_Button.Click += Login_Button_Click;
-            // 
-            // Cancell_Button
-            // 
-            Cancell_Button.Location = new Point(78, 245);
-            Cancell_Button.Name = "Cancell_Button";
-            Cancell_Button.Size = new Size(76, 23);
-            Cancell_Button.TabIndex = 7;
-            Cancell_Button.Text = "Cancell";
-            Cancell_Button.UseVisualStyleBackColor = true;
-            Cancell_Button.Click += Cancell_Button_Click;
-            // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
             // 
+            // Login_Button
+            // 
+            Login_Button.BackColor = SystemColors.HotTrack;
+            Login_Button.ForeColor = Color.White;
+            Login_Button.Location = new Point(159, 236);
+            Login_Button.Name = "Login_Button";
+            Login_Button.Round = 40;
+            Login_Button.Size = new Size(84, 47);
+            Login_Button.TabIndex = 8;
+            Login_Button.Text = "Login";
+            Login_Button.UseVisualStyleBackColor = false;
+            Login_Button.Click += Login_Button_Click;
+            // 
+            // Cancell_Button
+            // 
+            Cancell_Button.BackColor = SystemColors.ScrollBar;
+            Cancell_Button.ForeColor = SystemColors.HotTrack;
+            Cancell_Button.Location = new Point(69, 236);
+            Cancell_Button.Name = "Cancell_Button";
+            Cancell_Button.Round = 40;
+            Cancell_Button.Size = new Size(84, 47);
+            Cancell_Button.TabIndex = 8;
+            Cancell_Button.Text = "Cancell";
+            Cancell_Button.UseVisualStyleBackColor = false;
+            Cancell_Button.Click += Cancell_Button_Click;
+            // 
             // LoginForm
             // 
-            AcceptButton = Login_Button;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
@@ -125,8 +130,8 @@ namespace Phonebook
         private PictureBox Login_PictureBox;
         private RoundedTextBox Username_TextBox;
         private RoundedTextBox Password_TextBox;
-        private Button Login_Button;
-        private Button Cancell_Button;
         private ErrorProvider errorProvider;
+        private RoundedButton Cancell_Button;
+        private RoundedButton Login_Button;
     }
 }

@@ -32,11 +32,7 @@
             groupBox1 = new GroupBox();
             roundedTextBox1 = new Resources.RoundedTextBox(components);
             component11 = new Resources.RoundedButton(components);
-            component12 = new Resources.RoundedButton(components);
-            component13 = new Resources.RoundedButton(components);
             roundedTextBox2 = new Resources.RoundedTextBox(components);
-            button1 = new Button();
-            roundedButton1 = new Resources.RoundedButton(components);
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,28 +66,6 @@
             component11.Text = "بعدی";
             component11.UseVisualStyleBackColor = false;
             // 
-            // component12
-            // 
-            component12.BackColor = SystemColors.ControlDark;
-            component12.Location = new Point(371, 50);
-            component12.Name = "component12";
-            component12.Round = 15;
-            component12.Size = new Size(94, 50);
-            component12.TabIndex = 2;
-            component12.Text = "component12";
-            component12.UseVisualStyleBackColor = false;
-            // 
-            // component13
-            // 
-            component13.BackColor = Color.SlateGray;
-            component13.Location = new Point(280, 73);
-            component13.Name = "component13";
-            component13.Round = 15;
-            component13.Size = new Size(75, 23);
-            component13.TabIndex = 3;
-            component13.Text = "component13";
-            component13.UseVisualStyleBackColor = false;
-            // 
             // roundedTextBox2
             // 
             roundedTextBox2.Location = new Point(527, 134);
@@ -100,35 +74,12 @@
             roundedTextBox2.Size = new Size(100, 23);
             roundedTextBox2.TabIndex = 4;
             // 
-            // button1
-            // 
-            button1.Location = new Point(121, 87);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // roundedButton1
-            // 
-            roundedButton1.Location = new Point(594, 181);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Round = 15;
-            roundedButton1.Size = new Size(101, 100);
-            roundedButton1.TabIndex = 7;
-            roundedButton1.Text = "roundedButton1";
-            roundedButton1.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(720, 369);
-            Controls.Add(roundedButton1);
-            Controls.Add(button1);
             Controls.Add(roundedTextBox2);
-            Controls.Add(component13);
-            Controls.Add(component12);
             Controls.Add(component11);
             Controls.Add(groupBox1);
             Name = "MainForm";
@@ -144,10 +95,6 @@
         private GroupBox groupBox1;
         private Resources.RoundedTextBox roundedTextBox1;
         private Resources.RoundedButton component11;
-        private Resources.RoundedButton component12;
-        private Resources.RoundedButton component13;
         private Resources.RoundedTextBox roundedTextBox2;
-        private Button button1;
-        private Resources.RoundedButton roundedButton1;
     }
 }
