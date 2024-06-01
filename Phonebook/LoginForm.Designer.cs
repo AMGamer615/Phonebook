@@ -43,9 +43,9 @@ namespace Phonebook
             // Login_PictureBox
             // 
             Login_PictureBox.Image = Properties.Resources.Icon;
-            Login_PictureBox.Location = new Point(96, 27);
+            Login_PictureBox.Location = new Point(91, 24);
             Login_PictureBox.Name = "Login_PictureBox";
-            Login_PictureBox.Size = new Size(121, 113);
+            Login_PictureBox.Size = new Size(131, 121);
             Login_PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Login_PictureBox.TabIndex = 0;
             Login_PictureBox.TabStop = false;
@@ -53,22 +53,24 @@ namespace Phonebook
             // Username_TextBox
             // 
             Username_TextBox.BackColor = SystemColors.Window;
-            Username_TextBox.Location = new Point(107, 156);
+            Username_TextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            Username_TextBox.Location = new Point(99, 164);
             Username_TextBox.Name = "Username_TextBox";
-            Username_TextBox.PlaceholderText = "Username";
-            Username_TextBox.Round = 15;
-            Username_TextBox.Size = new Size(100, 23);
+            Username_TextBox.PlaceholderText = "نام کاربری";
+            Username_TextBox.Round = 20;
+            Username_TextBox.Size = new Size(116, 27);
             Username_TextBox.TabIndex = 4;
             Username_TextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // Password_TextBox
             // 
             Password_TextBox.BackColor = SystemColors.Window;
-            Password_TextBox.Location = new Point(107, 198);
+            Password_TextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            Password_TextBox.Location = new Point(99, 197);
             Password_TextBox.Name = "Password_TextBox";
-            Password_TextBox.PlaceholderText = "Password";
-            Password_TextBox.Round = 15;
-            Password_TextBox.Size = new Size(100, 23);
+            Password_TextBox.PlaceholderText = "رمز عبور";
+            Password_TextBox.Round = 20;
+            Password_TextBox.Size = new Size(116, 27);
             Password_TextBox.TabIndex = 4;
             Password_TextBox.TextAlign = HorizontalAlignment.Center;
             Password_TextBox.UseSystemPasswordChar = true;
@@ -86,7 +88,7 @@ namespace Phonebook
             Login_Button.Round = 40;
             Login_Button.Size = new Size(84, 47);
             Login_Button.TabIndex = 8;
-            Login_Button.Text = "Login";
+            Login_Button.Text = "ورود";
             Login_Button.UseVisualStyleBackColor = false;
             Login_Button.Click += Login_Button_Click;
             // 
@@ -99,15 +101,17 @@ namespace Phonebook
             Cancell_Button.Round = 40;
             Cancell_Button.Size = new Size(84, 47);
             Cancell_Button.TabIndex = 8;
-            Cancell_Button.Text = "Cancell";
+            Cancell_Button.Text = "انصراف";
             Cancell_Button.UseVisualStyleBackColor = false;
             Cancell_Button.Click += Cancell_Button_Click;
             // 
             // LoginForm
             // 
+            AcceptButton = Login_Button;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
+            BackColor = SystemColors.ControlLight;
+            CancelButton = Cancell_Button;
             ClientSize = new Size(321, 300);
             ControlBox = false;
             Controls.Add(Cancell_Button);
@@ -118,7 +122,7 @@ namespace Phonebook
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
+            Text = "دفترچه تلفن";
             ((System.ComponentModel.ISupportInitialize)Login_PictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);

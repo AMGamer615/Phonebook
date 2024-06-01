@@ -45,7 +45,7 @@ namespace Phonebook.Resources
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(3, 5, this.Width-3, this.Height-3, round, round));
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(4, 4, this.Width-4, this.Height-4, round, round));
         }
         protected override void OnMouseEnter(EventArgs e)
         {
