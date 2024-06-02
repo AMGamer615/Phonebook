@@ -68,11 +68,11 @@ namespace Phonebook
             errorProvider1.Clear();
             if (Password_TextBox.Text != ConfirmPassword_TextBox.Text)
             {
-                errorProvider1.SetError(Password_TextBox, " ");
-                errorProvider1.SetError(ConfirmPassword_TextBox, " ");
+                errorProvider1.SetError(Password_TextBox, "*");
+                errorProvider1.SetError(ConfirmPassword_TextBox, "*");
                 return;
             }
-            int role = 0;
+            int role = 1;
             foreach (var item in Role.GetRoles())
             {
                 if (item.Value == Role_ComboBox.Text)

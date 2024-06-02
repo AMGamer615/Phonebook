@@ -40,8 +40,8 @@ namespace Phonebook
             }
             else
             {
-                errorProvider1.SetError(NewPassword_TextBox," ");
-                errorProvider1.SetError(ConfirmNewPassword_TextBox," ");
+                errorProvider1.SetError(NewPassword_TextBox,"*");
+                errorProvider1.SetError(ConfirmNewPassword_TextBox,"*");
             }
         }
     }

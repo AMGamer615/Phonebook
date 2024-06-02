@@ -1,11 +1,14 @@
 ﻿using PhoneBook.Datalayer.Convertor;
 using PhoneBook.Datalayer.DTOs;
+using PhoneBook.Datalayer.Entities.User;
+using PhoneBook.Datalayer.Model;
 using PhoneBook.Datalayer.Repository;
 using PhoneBook.Datalayer.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -25,6 +28,7 @@ namespace Phonebook
             this.ActiveControl = this.Login_Button;
             User = new UserService();
             Role = new RoleService();
+            setuser();
         }
 
         private void Cancell_Button_Click(object sender, EventArgs e)
@@ -75,6 +79,35 @@ namespace Phonebook
             {
                 MessageBox.Show("خطا دوباره تلاش کنید");
             }
+        }
+        private void setuser()
+        {
+            MyDbContext DB = new MyDbContext();
+            Role Admin = new Role()
+            {
+                RoleId = 1,
+                RoleTitle = "Admin"
+            };
+            DB.Roles.AddOrUpdate(Admin);
+            Role user = new Role()
+            {
+                RoleId = 2,
+                RoleTitle = "User"
+            };
+            DB.Roles.AddOrUpdate(user);
+            DB.SaveChanges();
+            UserViewModel UVM = new UserViewModel();
+            UVM.UserId = 1;
+            UVM.UserName = "Amirmahdi";
+            UVM.Password = MD5Hash.MD5Hashing("123");
+            UVM.FullFamily = "امیرمهدی راحت";
+            UVM.PhoneNumber = "09687258643";
+            UVM.BirthDay = "1382/04/07";
+            UVM.Email = "Amirmahdi@gmail.com";
+            UVM.RoleId = 1;
+            UVM.Sex = "مرد";
+            UVM.NationalID = "0204867193";
+            User.Insert(UVM);
         }
     }
 }

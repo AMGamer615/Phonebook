@@ -14,11 +14,6 @@ namespace PhoneBook.Datalayer.Services
 {
     public class UserService : IUser
     {
-        public bool Authorization(string UserName)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool ChangedPass(string UserName, string Oldpassword, string Newpassword)
         {
             MyDbContext DB = new MyDbContext();
