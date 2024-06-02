@@ -42,7 +42,7 @@ namespace PhoneBook.Datalayer.Entities.User
 
         [Display(Name = "شماره همراه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public string Mobile { get; set; }
+        public string PhoneNumber { get; set; }
 
 
         [Display(Name = "ایمیل")]

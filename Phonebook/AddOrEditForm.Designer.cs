@@ -68,6 +68,7 @@
             Sex_ComboBox.Location = new Point(32, 64);
             Sex_ComboBox.Name = "Sex_ComboBox";
             Sex_ComboBox.PlaceholderText = "جنسیت";
+            Sex_ComboBox.RightToLeft = RightToLeft.Yes;
             Sex_ComboBox.Round = 25;
             Sex_ComboBox.Size = new Size(198, 30);
             Sex_ComboBox.TabIndex = 6;
@@ -93,6 +94,7 @@
             Email_TextBox.Location = new Point(32, 99);
             Email_TextBox.Name = "Email_TextBox";
             Email_TextBox.PlaceholderText = "ایمیل";
+            Email_TextBox.RightToLeft = RightToLeft.No;
             Email_TextBox.Round = 25;
             Email_TextBox.Size = new Size(198, 29);
             Email_TextBox.TabIndex = 3;
@@ -104,6 +106,7 @@
             BirthDay_TextBox.Location = new Point(257, 99);
             BirthDay_TextBox.Name = "BirthDay_TextBox";
             BirthDay_TextBox.PlaceholderText = "تاریخ تولد";
+            BirthDay_TextBox.RightToLeft = RightToLeft.No;
             BirthDay_TextBox.Round = 25;
             BirthDay_TextBox.Size = new Size(198, 29);
             BirthDay_TextBox.TabIndex = 3;
@@ -128,6 +131,7 @@
             PhoneNumber_TextBox.MaxLength = 11;
             PhoneNumber_TextBox.Name = "PhoneNumber_TextBox";
             PhoneNumber_TextBox.PlaceholderText = "شماره همراه";
+            PhoneNumber_TextBox.RightToLeft = RightToLeft.No;
             PhoneNumber_TextBox.Round = 25;
             PhoneNumber_TextBox.Size = new Size(198, 29);
             PhoneNumber_TextBox.TabIndex = 3;

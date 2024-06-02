@@ -16,6 +16,6 @@ namespace PhoneBook.Datalayer.Repository
 
         bool Authorization(string UserName);
 
-       
+        bool Insert(UserViewModel entity);
     }
 }

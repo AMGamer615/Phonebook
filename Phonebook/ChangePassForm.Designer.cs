@@ -33,6 +33,8 @@
             NewPassword_TextBox = new Resources.RoundedTextBox(components);
             ConfirmNewPassword_TextBox = new Resources.RoundedTextBox(components);
             Submit_Button = new Resources.RoundedButton(components);
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // Password_TextBox
@@ -45,6 +47,7 @@
             Password_TextBox.Size = new Size(198, 29);
             Password_TextBox.TabIndex = 1;
             Password_TextBox.TextAlign = HorizontalAlignment.Center;
+            Password_TextBox.UseSystemPasswordChar = true;
             // 
             // NewPassword_TextBox
             // 
@@ -56,6 +59,7 @@
             NewPassword_TextBox.Size = new Size(198, 29);
             NewPassword_TextBox.TabIndex = 1;
             NewPassword_TextBox.TextAlign = HorizontalAlignment.Center;
+            NewPassword_TextBox.UseSystemPasswordChar = true;
             // 
             // ConfirmNewPassword_TextBox
             // 
@@ -67,6 +71,7 @@
             ConfirmNewPassword_TextBox.Size = new Size(198, 29);
             ConfirmNewPassword_TextBox.TabIndex = 1;
             ConfirmNewPassword_TextBox.TextAlign = HorizontalAlignment.Center;
+            ConfirmNewPassword_TextBox.UseSystemPasswordChar = true;
             // 
             // Submit_Button
             // 
@@ -79,6 +84,11 @@
             Submit_Button.TabIndex = 3;
             Submit_Button.Text = "انجام";
             Submit_Button.UseVisualStyleBackColor = false;
+            Submit_Button.Click += Submit_Button_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // ChangePassForm
             // 
@@ -96,6 +106,7 @@
             RightToLeft = RightToLeft.No;
             StartPosition = FormStartPosition.CenterParent;
             Text = "تغییر رمز عبور";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -106,5 +117,6 @@
         private Resources.RoundedTextBox NewPassword_TextBox;
         private Resources.RoundedTextBox ConfirmNewPassword_TextBox;
         private Resources.RoundedButton Submit_Button;
+        private ErrorProvider errorProvider1;
     }
 }

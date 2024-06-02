@@ -83,20 +83,24 @@ namespace Phonebook
 
         private void Edit_Button_Click(object sender, EventArgs e)
         {
-            DataGridViewCell cell = People_DataGridView.SelectedCells[0];
-            AddOrEditForm form = new AddOrEditForm();
-            form.Text = "ویرایش شخص";
-            form.Submit_Button.Text = "ویرایش";
-            form.DataGridView = People_DataGridView;
-            int Id = Convert.ToInt32(cell.OwningRow.Cells["People_Id"].Value);
-            form.Id = Id;
-            form.Name_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_Name"].Value);
-            form.LastName_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_LastName"].Value);
-            form.Sex_ComboBox.Text = Convert.ToString(cell.OwningRow.Cells["People_Sex"].Value);
-            form.BirthDay_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_BirthDay"].Value);
-            form.PhoneNumber_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_PhoneNumber"].Value);
-            form.Email_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_Email"].Value);
-            form.ShowDialog();
+            try
+            {
+                DataGridViewCell cell = People_DataGridView.SelectedCells[0];
+                AddOrEditForm form = new AddOrEditForm();
+                form.Text = "ویرایش شخص";
+                form.Submit_Button.Text = "ویرایش";
+                form.DataGridView = People_DataGridView;
+                int Id = Convert.ToInt32(cell.OwningRow.Cells["People_Id"].Value);
+                form.Id = Id;
+                form.Name_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_Name"].Value);
+                form.LastName_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_LastName"].Value);
+                form.Sex_ComboBox.Text = Convert.ToString(cell.OwningRow.Cells["People_Sex"].Value);
+                form.BirthDay_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_BirthDay"].Value);
+                form.PhoneNumber_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_PhoneNumber"].Value);
+                form.Email_TextBox.Text = Convert.ToString(cell.OwningRow.Cells["People_Email"].Value);
+                form.ShowDialog();
+            }
+            catch { }
         }
     }
 }

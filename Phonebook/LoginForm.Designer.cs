@@ -54,11 +54,11 @@ namespace Phonebook
             // 
             Username_TextBox.BackColor = SystemColors.Window;
             Username_TextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            Username_TextBox.Location = new Point(99, 164);
+            Username_TextBox.Location = new Point(85, 161);
             Username_TextBox.Name = "Username_TextBox";
             Username_TextBox.PlaceholderText = "نام کاربری";
             Username_TextBox.Round = 20;
-            Username_TextBox.Size = new Size(116, 27);
+            Username_TextBox.Size = new Size(144, 27);
             Username_TextBox.TabIndex = 4;
             Username_TextBox.TextAlign = HorizontalAlignment.Center;
             // 
@@ -66,11 +66,11 @@ namespace Phonebook
             // 
             Password_TextBox.BackColor = SystemColors.Window;
             Password_TextBox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            Password_TextBox.Location = new Point(99, 197);
+            Password_TextBox.Location = new Point(85, 194);
             Password_TextBox.Name = "Password_TextBox";
             Password_TextBox.PlaceholderText = "رمز عبور";
             Password_TextBox.Round = 20;
-            Password_TextBox.Size = new Size(116, 27);
+            Password_TextBox.Size = new Size(144, 27);
             Password_TextBox.TabIndex = 4;
             Password_TextBox.TextAlign = HorizontalAlignment.Center;
             Password_TextBox.UseSystemPasswordChar = true;

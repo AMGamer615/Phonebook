@@ -241,6 +241,7 @@
             Information_TextBox.Location = new Point(12, 406);
             Information_TextBox.Name = "Information_TextBox";
             Information_TextBox.ReadOnly = true;
+            Information_TextBox.RightToLeft = RightToLeft.Yes;
             Information_TextBox.Round = 25;
             Information_TextBox.Size = new Size(358, 29);
             Information_TextBox.TabIndex = 0;

@@ -31,11 +31,11 @@ namespace PhoneBook.Datalayer.DTOs
         [Display(Name = "تاریخ تولد")]
         [DisplayFormat(DataFormatString = "{0: yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public System.DateTime BirthDay { get; set; }
+        public string BirthDay { get; set; }
 
         [Display(Name = "شماره همراه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public string Mobile { get; set; }
+        public string PhoneNumber { get; set; }
 
 
         [Display(Name = "ایمیل")]

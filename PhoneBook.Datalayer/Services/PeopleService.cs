@@ -62,7 +62,7 @@ namespace PhoneBook.Datalayer.Services
                 LastName = entity.LastName,
                 Sex = entity.Sex,
                 Email = entity.Email,
-                PhoneNumber = entity.PhoneNumber,
+                PhoneNumber = entity.PhoneNumber
             };
             try
             {
