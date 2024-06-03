@@ -92,8 +92,28 @@ namespace Phonebook
                 int Id = Convert.ToInt32(cell.OwningRow.Cells["People_Id"].Value);
                 people.Delete(Id);
             }
-            List<PeopleViewModel> peoples = people.GetAll();
-            People_DataGridView.DataSource = peoples;
+            if (Search_TextBox.Text == string.Empty)
+            {
+                People_DataGridView.DataSource = people.GetAll();
+                People_DataGridView.ClearSelection();
+            }
+            else
+            {
+                People_DataGridView.DataSource = people.Search(Search_TextBox.Text);
+                List<string> columnnames = new List<string>() { "People_Name", "People_LastName", "People_PhoneNumber" };
+                People_DataGridView.ClearSelection();
+                foreach (var columnname in columnnames)
+                {
+                    foreach (DataGridViewRow row in People_DataGridView.Rows)
+                    {
+                        var cell = row.Cells[columnname];
+                        if (Convert.ToString(cell.Value).Contains(Search_TextBox.Text) && Search_TextBox.Text != string.Empty)
+                        {
+                            cell.Selected = true;
+                        }
+                    }
+                }
+            }
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)

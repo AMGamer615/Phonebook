@@ -131,8 +131,10 @@ namespace Phonebook
             }
 
             if (!Email_TextBox.Text.EndsWith(".com"))
+            {
                 Validation = false;
-
+                errorProvider1.SetError(Email_TextBox, "فرمت ایمیل وارد شده صحیح نمی باشد");
+            }
             List<Control> list = new List<Control>() { Name_TextBox, LastName_TextBox, Sex_ComboBox, BirthDay_TextBox, PhoneNumber_TextBox, Email_TextBox};
 
             foreach (Control c in list)

@@ -116,7 +116,7 @@
             Role_ComboBox.Location = new Point(43, 102);
             Role_ComboBox.Name = "Role_ComboBox";
             Role_ComboBox.PlaceholderText = "نقش";
-            Role_ComboBox.RightToLeft = RightToLeft.No;
+            Role_ComboBox.RightToLeft = RightToLeft.Yes;
             Role_ComboBox.Round = 25;
             Role_ComboBox.Size = new Size(198, 30);
             Role_ComboBox.TabIndex = 7;
