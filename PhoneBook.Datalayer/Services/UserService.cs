@@ -79,5 +79,18 @@ namespace PhoneBook.Datalayer.Services
                 return false;
             }
         }
+
+        public bool Authorization(string UserName)
+        {
+            MyDbContext DB = new MyDbContext();
+
+            User user = DB.Users.FirstOrDefault(x => x.UserName == UserName);
+
+            if (user == null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

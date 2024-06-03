@@ -37,7 +37,9 @@
             LastName_TextBox = new Resources.RoundedTextBox(components);
             PhoneNumber_TextBox = new Resources.RoundedTextBox(components);
             Name_TextBox = new Resources.RoundedTextBox(components);
+            errorProvider1 = new ErrorProvider(components);
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -149,6 +151,10 @@
             Name_TextBox.TabIndex = 3;
             Name_TextBox.TextAlign = HorizontalAlignment.Center;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // AddOrEditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -163,6 +169,7 @@
             Text = "افزودن شخص جدید";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -176,5 +183,6 @@
         public Resources.RoundedTextBox LastName_TextBox;
         public Resources.RoundedTextBox PhoneNumber_TextBox;
         public Resources.RoundedComboBox Sex_ComboBox;
+        private ErrorProvider errorProvider1;
     }
 }

@@ -15,5 +15,7 @@ namespace PhoneBook.Datalayer.Repository
         bool ChangedPass(string UserName, string Oldpassword, string Newpassword);
 
         bool Insert(UserViewModel entity);
+
+        bool Authorization(string UserName);
     }
 }

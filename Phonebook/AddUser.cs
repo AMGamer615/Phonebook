@@ -1,4 +1,5 @@
-﻿using PhoneBook.Datalayer.Convertor;
+﻿using Phonebook.Resources;
+using PhoneBook.Datalayer.Convertor;
 using PhoneBook.Datalayer.DTOs;
 using PhoneBook.Datalayer.Repository;
 using PhoneBook.Datalayer.Services;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -66,10 +68,20 @@ namespace Phonebook
         private void Submit_Button_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
+
+            if (!Validation())
+                return;
+
+            if (!User.Authorization(UserName_TextBox.Text))
+            {
+                errorProvider1.SetError(UserName_TextBox,"کاربری با این نام کاربری وجود دارد");
+                return;
+            }
+
             if (Password_TextBox.Text != ConfirmPassword_TextBox.Text)
             {
-                errorProvider1.SetError(Password_TextBox, "*");
-                errorProvider1.SetError(ConfirmPassword_TextBox, "*");
+                errorProvider1.SetError(Password_TextBox, "رمز عبور و تکرار رمز عبور باید با هم برابر باشند");
+                errorProvider1.SetError(ConfirmPassword_TextBox, "رمز عبور و تکرار رمز عبور باید با هم برابر باشند");
                 return;
             }
             int role = 1;
@@ -98,8 +110,49 @@ namespace Phonebook
             }
             else
             {
-                MessageBox.Show("اطلاعات وارد شده صحیح نمی باشد");
+                MessageBox.Show("خطا");
             }
+        }
+
+        private bool Validation()
+        {
+            bool Validation = true;
+
+            try
+            {
+                Convert.ToDateTime(BirthDay_TextBox.Text);
+            }
+            catch
+            {
+                Validation = false;
+                errorProvider1.SetError(BirthDay_TextBox, $"فرمت تاریخ وارد شده صحیح نمی باشد");
+            }
+
+            try
+            {
+                var Email = new MailAddress(Email_TextBox.Text);
+            }
+            catch
+            {
+                Validation = false;
+                errorProvider1.SetError(Email_TextBox, "فرمت ایمیل وارد شده صحیح نمی باشد");
+            }
+
+            List<Control> list = new List<Control>() { UserName_TextBox, FullFamily_TextBox, Sex_ComboBox, NationalID_TextBox, BirthDay_TextBox, PhoneNumber_TextBox, Email_TextBox, Password_TextBox ,ConfirmPassword_TextBox };
+
+            foreach (Control c in list)
+            {
+                if (c.Text == string.Empty)
+                {
+                    Validation = false;
+                    if (c is RoundedTextBox r)
+                        errorProvider1.SetError(c, $"لطفا {r.PlaceholderText} را وارد کنید");
+                    else if (c is RoundedComboBox rc)
+                        errorProvider1.SetError(c, $"لطفا {rc.PlaceholderText} را وارد کنید");
+                }
+            }
+
+            return Validation;
         }
     }
 }

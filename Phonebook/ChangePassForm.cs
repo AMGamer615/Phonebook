@@ -35,13 +35,13 @@ namespace Phonebook
                 }
                 else
                 {
-                    MessageBox.Show("رمز صحیح نمی باشد");
+                    errorProvider1.SetError(Password_TextBox, "رمز عبور صحیح نمی باشد");
                 }
             }
             else
             {
-                errorProvider1.SetError(NewPassword_TextBox,"*");
-                errorProvider1.SetError(ConfirmNewPassword_TextBox,"*");
+                errorProvider1.SetError(NewPassword_TextBox, "رمز عبور جدید و تکرار رمز عبور جدید باید با هم برابر باشند");
+                errorProvider1.SetError(ConfirmNewPassword_TextBox, "رمز عبور جدید و تکرار کلمه رمز جدید باید با هم برابر باشند");
             }
         }
     }
