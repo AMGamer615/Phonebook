@@ -61,9 +61,27 @@ namespace Phonebook
             {
                 this.Hide();
                 if (search.Text == string.Empty)
+                {
                     DataGridView.DataSource = people.GetAll();
+                    DataGridView.ClearSelection();
+                }
                 else
+                { 
                     DataGridView.DataSource = people.Search(search.Text);
+                    List<string> columnnames = new List<string>() { "People_Name", "People_LastName", "People_PhoneNumber" };
+                    DataGridView.ClearSelection();
+                    foreach (var columnname in columnnames)
+                    {
+                        foreach (DataGridViewRow row in DataGridView.Rows)
+                        {
+                            var cell = row.Cells[columnname];
+                            if (Convert.ToString(cell.Value).Contains(search.Text) && search.Text != string.Empty)
+                            {
+                                cell.Selected = true;
+                            }
+                        }
+                    }
+                }
                 this.Close();
             }
             else

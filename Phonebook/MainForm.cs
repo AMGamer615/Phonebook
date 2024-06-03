@@ -34,6 +34,7 @@ namespace Phonebook
             people = new PeopleService();
             List<PeopleViewModel> peoples = people.GetAll();
             People_DataGridView.DataSource = peoples;
+            People_DataGridView.ClearSelection();
         }
 
         private void ChangePassword_ToolStrip_Click(object sender, EventArgs e)
@@ -60,6 +61,18 @@ namespace Phonebook
         {
             List<PeopleViewModel> peoples = people.Search(Search_TextBox.Text);
             People_DataGridView.DataSource = peoples;
+            List<string> columnnames = new List<string>() { "People_Name" , "People_LastName" , "People_PhoneNumber" };
+            People_DataGridView.ClearSelection();
+            foreach (var columnname in columnnames) {
+                foreach (DataGridViewRow row in People_DataGridView.Rows)
+                {
+                    var cell = row.Cells[columnname];
+                    if (Convert.ToString(cell.Value).Contains(Search_TextBox.Text) && Search_TextBox.Text != string.Empty)
+                    {
+                        cell.Selected = true;
+                    }
+                }
+            }
         }
 
         private void Update_ToolStrip_Click(object sender, EventArgs e)
@@ -68,6 +81,7 @@ namespace Phonebook
             this.ActiveControl = this.Edit_Button;
             List<PeopleViewModel> peoples = people.GetAll();
             People_DataGridView.DataSource = peoples;
+            People_DataGridView.ClearSelection();
         }
 
         private void Remove_Button_Click(object sender, EventArgs e)
