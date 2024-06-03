@@ -279,7 +279,7 @@
         #endregion
 
         private GroupBox Search_Box;
-        private Resources.RoundedTextBox Search_TextBox;
+        public Resources.RoundedTextBox Search_TextBox;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem AddPeople_ToolStrip;
         private ToolStripMenuItem AddUser_ToolStrip;

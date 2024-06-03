@@ -24,6 +24,7 @@ namespace Phonebook
 
         public DataGridView DataGridView { get; set; }
         public int? Id { get; set; } = null;
+        public TextBox search {  get; set; }
 
         public AddOrEditForm()
         {
@@ -59,7 +60,10 @@ namespace Phonebook
             if (people.Insert(peopleVM))
             {
                 this.Hide();
-                DataGridView.DataSource = people.GetAll();
+                if (search.Text == string.Empty)
+                    DataGridView.DataSource = people.GetAll();
+                else
+                    DataGridView.DataSource = people.Search(search.Text);
                 this.Close();
             }
             else
@@ -107,6 +111,9 @@ namespace Phonebook
                 Validation = false;
                 errorProvider1.SetError(Email_TextBox, "فرمت ایمیل وارد شده صحیح نمی باشد");
             }
+
+            if (!Email_TextBox.Text.EndsWith(".com"))
+                Validation = false;
 
             List<Control> list = new List<Control>() { Name_TextBox, LastName_TextBox, Sex_ComboBox, BirthDay_TextBox, PhoneNumber_TextBox, Email_TextBox};
 

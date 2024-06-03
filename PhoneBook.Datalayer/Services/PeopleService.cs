@@ -82,8 +82,9 @@ namespace PhoneBook.Datalayer.Services
             MyDbContext DB = new MyDbContext();
             List<PeopleViewModel> peopleVM = new List<PeopleViewModel>();
 
-            var List =  DB.People.Where(x => x.Name.Contains(parameter) || x.LastName.Contains(parameter) || x.PhoneNumber.Contains(parameter)).Select(c => new PeopleViewModel
+            var List = DB.People.Where(x => x.Name.Contains(parameter) || x.LastName.Contains(parameter) || x.PhoneNumber.Contains(parameter)).Select(c => new PeopleViewModel
             {
+                PeopleId = c.PeopleId,
                 Name = c.Name,
                 LastName = c.LastName,
                 Sex = c.Sex,

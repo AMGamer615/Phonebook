@@ -46,6 +46,7 @@ namespace Phonebook
         {
             AddOrEditForm form = new AddOrEditForm();
             form.DataGridView = People_DataGridView;
+            form.search = Search_TextBox;
             form.ShowDialog();
         }
 
@@ -87,8 +88,9 @@ namespace Phonebook
             {
                 DataGridViewCell cell = People_DataGridView.SelectedCells[0];
                 AddOrEditForm form = new AddOrEditForm();
+                form.search = Search_TextBox;
                 form.Text = "ویرایش شخص";
-                form.Submit_Button.Text = "ویرایش";
+                form.Submit_Button.Text = "ذخیره";
                 form.DataGridView = People_DataGridView;
                 int Id = Convert.ToInt32(cell.OwningRow.Cells["People_Id"].Value);
                 form.Id = Id;
